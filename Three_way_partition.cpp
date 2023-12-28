@@ -9,33 +9,33 @@ Note: The generated output is 1 if you modify the given array successfully.
 
 //Back-end complete function Template for C
 
-void swap(int *xp, int *yp)
+class Solution
 {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
-
-void threeWayPartition(int arr[], int n, int a, int b)
-{
-    // Using two pointers which help in finding the index with which
-    // the elements need to be swapped if they are not in correct position.
-    int start = 0, end = n - 1;
-
-    for (int i = 0; i <= end;)
+public:
+    // Function to partition the array around the range such
+    // that array is divided into three parts.
+    void threeWayPartition(vector<int> &array, int a, int b)
     {
-        // If current element is smaller than lower range, we swap
-        // it with value on next available smallest position.
-        if (arr[i] < a)
-            swap(&arr[i++], &arr[start++]);
+        int n = array.size();
+        // Using two pointers which help in finding the index with which
+        // the elements need to be swapped if they are not in correct position.
+        int start = 0, end = n - 1;
 
-        // If current element is greater than higher range, we swap
-        // it with value on next available greatest position.
-        else if (arr[i] > b)
-            swap(&arr[i], &arr[end--]);
+        for (int i = 0; i <= end;)
+        {
+            // If current element is smaller than lower range, we swap
+            // it with value on next available smallest position.
+            if (array[i] < a)
+                swap(array[i++], array[start++]);
 
-        // Else we just move ahead in the array.
-        else
-            i++;
+            // If current element is greater than higher range, we swap
+            // it with value on next available greatest position.
+            else if (array[i] > b)
+                swap(array[i], array[end--]);
+
+            // Else we just move ahead in the array.
+            else
+                i++;
+        }
     }
-}
+};
