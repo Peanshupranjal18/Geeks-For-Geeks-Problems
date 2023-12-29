@@ -115,8 +115,7 @@ public:
 
 Using Hashmap to find Intersection points 
 
--> We need to increment and then check for the other Node if the value in the map is already greater than 0 then it is a common element we can use unordered map as the Nodes given are already sorted
-
+-> We need to increment and then check for the other Node if the value in the map is already greater than 0 then it is a common element we can use unordered map as the Nodes given are already sorted set can also be used here
 #include <unordered_map>
 
 class Node
